@@ -8,18 +8,18 @@ dom = minidom.parseString(xml_data)
 dom.normalize()
 
 elements = dom.getElementsByTagName('Valute')
-NumList = []
-CharList = []
+num_list = []
+char_list = []
 
 for node in elements:
     for child in node.childNodes:
         if child.nodeType == 1:
             if child.tagName == 'NumCode':
                 if child.firstChild.nodeType == 3:
-                    NumList.append(int(child.firstChild.data))
+                    num_list.append(int(child.firstChild.data))
             if child.tagName == 'CharCode':
                 if child.firstChild.nodeType == 3:
-                    CharList.append(str(child.firstChild.data))
+                    char_list.append(str(child.firstChild.data))
 
-print(NumList)
-print(CharList)
+print(num_list)
+print(char_list)

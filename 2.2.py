@@ -1,14 +1,7 @@
 import csv
+from csv_tools import get_title
 
 table = 'books.csv'
-
-def get_title(dataset):
-    dataset.seek(0)
-    title = next(dataset)
-    title = title.split(';')
-    title = [col.strip() for col in title]
-    print(title)
-    return title
 
 def filter_ath_200(dataset, title, athor_inp):
     filtered = []
