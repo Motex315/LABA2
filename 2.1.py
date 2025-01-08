@@ -4,15 +4,14 @@ table = 'books.csv'
 
 with open(table) as dataset:
     title = get_title(dataset)
-    i = 1
+    i = 0
     try:
         while next(dataset) != '':
             line = next(dataset)
             res = get_object(line,title)
             if len(res[1]) > 30:
-                print(res,i)
                 i+=1
     except:
         pass
     
-print(title)
+print(i)
